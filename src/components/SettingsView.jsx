@@ -16,7 +16,7 @@ export default function SettingsView({
     setOfficeLocation({ lat: 10.36727460696543, lng: 106.352052343414 });
     Toast.show({
       icon: 'success',
-      content: 'Đã khôi phục văn phòng Bến Tre mặc định',
+      content: 'Đã khôi phục vị trí cơ sở mặc định',
     });
   };
 
@@ -58,10 +58,10 @@ export default function SettingsView({
         </div>
       </div>
 
-      {/* Office GPS Coordinates */}
+      {/* Base GPS Coordinates */}
       <div className="form-field">
         <label>
-          <MapPin size={12} /> Vĩ độ Văn phòng
+          <MapPin size={12} /> Vĩ độ vị trí cơ sở
         </label>
         <input
           type="number"
@@ -74,7 +74,7 @@ export default function SettingsView({
 
       <div className="form-field">
         <label>
-          <MapPin size={12} /> Kinh độ Văn phòng
+          <MapPin size={12} /> Kinh độ vị trí cơ sở
         </label>
         <input
           type="number"
@@ -87,7 +87,7 @@ export default function SettingsView({
 
       {/* Address */}
       <div className="form-field">
-        <label>Địa chỉ văn phòng (Nominatim API):</label>
+        <label>Địa chỉ cơ sở (Nominatim API):</label>
         <div className="display-box">
           {loadingAddress ? (
             <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
@@ -117,7 +117,7 @@ export default function SettingsView({
           onClick={handleResetOffice}
           style={{ fontSize: '0.85rem', height: '36px', background: 'rgba(255, 255, 255, 0.05)', color: '#fff', border: '1px solid rgba(255, 255, 255, 0.1)' }}
         >
-          Khôi phục VP Bến Tre mặc định
+          Khôi phục vị trí cơ sở mặc định
         </Button>
       </div>
 

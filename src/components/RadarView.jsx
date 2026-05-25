@@ -150,7 +150,7 @@ export default function RadarView({
       ctx.fillStyle = '#fff';
       ctx.font = 'bold 9px Outfit, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText("VP Bến Tre", centerX, centerY - 10);
+      ctx.fillText("Vị trí cơ sở", centerX, centerY - 10);
 
       // User location dot mapping
       if (userLocation) {
@@ -237,7 +237,7 @@ export default function RadarView({
       {/* Geofence Status Section */}
       <div className="criteria-card" style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '12px 15px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)', marginBottom: '15px' }}>
         <div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Khoảng cách văn phòng</div>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>Khoảng cách cơ sở</div>
           <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#fff', marginTop: '2px' }}>
             {distance !== null ? `${distance.toFixed(1)} m` : '---'}
           </div>

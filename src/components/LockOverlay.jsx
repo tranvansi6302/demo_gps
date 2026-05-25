@@ -14,7 +14,7 @@ export default function LockOverlay({ distance, allowedRadius }) {
           ĐÃ KHÓA TRUY CẬP
         </h2>
         <p className="status-desc" style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
-          Vị trí thiết bị nằm ngoài bán kính cho phép của văn phòng!
+          Vị trí thiết bị nằm ngoài bán kính cho phép của cơ sở!
         </p>
         <div 
           className="display-box" 
@@ -35,7 +35,7 @@ export default function LockOverlay({ distance, allowedRadius }) {
           Cần di chuyển lại gần thêm: <strong>{diff} m</strong>
         </div>
         <p className="status-desc" style={{ fontSize: '0.75rem' }}>
-          Ứng dụng sẽ tự động mở khóa khi bạn quay trở lại khu vực văn phòng.
+          Ứng dụng sẽ tự động mở khóa khi bạn quay trở lại khu vực cơ sở.
         </p>
       </div>
     </div>

@@ -5,8 +5,8 @@ import RadarView from './components/RadarView';
 import SettingsView from './components/SettingsView';
 import LockOverlay from './components/LockOverlay';
 
-// Bến Tre Office default coordinates
-const BEN_TRE_OFFICE = {
+// Default base coordinates
+const DEFAULT_BASE_LOCATION = {
   lat: 10.36727460696543,
   lng: 106.352052343414
 };
@@ -31,11 +31,11 @@ const calculateHaversineDistance = (lat1, lon1, lat2, lon2) => {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('radar');
-  
+
   // Geofencing parameters
-  const [officeLocation, setOfficeLocation] = useState(BEN_TRE_OFFICE);
+  const [officeLocation, setOfficeLocation] = useState(DEFAULT_BASE_LOCATION);
   const [allowedRadius, setAllowedRadius] = useState(100); // 100 meters standard
-  
+
   // Real-time GPS location states
   const [userLocation, setUserLocation] = useState(null);
   const [distance, setDistance] = useState(null);
@@ -121,7 +121,7 @@ export default function App() {
       (position) => {
         const { latitude, longitude, accuracy } = position.coords;
         const newLoc = { lat: latitude, lng: longitude, accuracy };
-        
+
         setUserLocation(newLoc);
         setError(null);
 
@@ -198,7 +198,7 @@ export default function App() {
         }
         setError(msg);
         addLog(`Lỗi định vị: ${msg}`, 'error');
-        
+
         Toast.show({
           icon: 'fail',
           content: msg,
@@ -264,9 +264,9 @@ export default function App() {
       <div className="phone-mockup">
         {/* If out of boundary, draw the fullscreen lock overlay screen */}
         {isLocked && (
-          <LockOverlay 
-            distance={distance} 
-            allowedRadius={allowedRadius} 
+          <LockOverlay
+            distance={distance}
+            allowedRadius={allowedRadius}
           />
         )}
 

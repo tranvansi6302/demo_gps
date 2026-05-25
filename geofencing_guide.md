@@ -94,7 +94,7 @@ function calculateHaversineDistance(lat1, lon1, lat2, lon2) {
 
 ## 3. Xác định Vùng Chặn Địa lý (Geofencing Radius)
 
-Để kiểm tra xem người dùng có nằm trong vùng hợp lệ (ví dụ: văn phòng) hay không:
+Để kiểm tra xem người dùng có nằm trong vùng hợp lệ (ví dụ: vị trí cơ sở) hay không:
 ```javascript
 const distance = calculateHaversineDistance(userLat, userLng, officeLat, officeLng);
 
@@ -109,7 +109,7 @@ if (distance <= allowedRadius) {
 
 ## 4. Tính toán Góc phương vị (Bearing) để Vẽ Radar Canvas
 
-Để hiển thị chấm đỏ/xanh biểu diễn vị trí người dùng xung quanh hồng tâm (văn phòng) trên màn hình radar 2D, chúng ta cần xác định hướng đi từ văn phòng tới vị trí người dùng. Hướng đi này gọi là **Góc phương vị (Bearing)** (tính bằng độ từ $0^\circ$ đến $360^\circ$, với $0^\circ$ là hướng Bắc, $90^\circ$ hướng Đông, v.v.).
+Để hiển thị chấm đỏ/xanh biểu diễn vị trí người dùng xung quanh hồng tâm (vị trí cơ sở) trên màn hình radar 2D, chúng ta cần xác định hướng đi từ vị trí cơ sở tới vị trí người dùng. Hướng đi này gọi là **Góc phương vị (Bearing)** (tính bằng độ từ $0^\circ$ đến $360^\circ$, với $0^\circ$ là hướng Bắc, $90^\circ$ hướng Đông, v.v.).
 
 ### Công thức Toán học:
 $$\theta = \operatorname{atan2}\left(\sin(\Delta\lambda) \cdot \cos(\varphi_2), \cos(\varphi_1) \cdot \sin(\varphi_2) - \sin(\varphi_1) \cdot \cos(\varphi_2) \cdot \cos(\Delta\lambda)\right)$$
